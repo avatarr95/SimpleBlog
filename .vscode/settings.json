@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": "/usr/bin/python3.6",
+  "team.showWelcomeMessage": false,
+  "editor.formatOnSave": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+  "python.linting.pylintEnabled": true,
+  "venvPath": "${workspaceFolder}/backend/my_env/bin/python3",
+  "python.linting.pycodestyleArgs": ["--ignore=E501"]
+}
