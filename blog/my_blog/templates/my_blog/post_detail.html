@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'my_blog:index' %}" style="text-decoration: none; color: black;"><h1> Simple Blog </h1></a>
+<div class="wrapper">
+
+    <div class="blog_post">
+        <h2>{{ post.title }}</h2>
+        <i>Published by</i> <b>{{ post.author }}</b> <i>on {{ post.published }}</i>
+        <hr>
+        <p>{{ post.content|safe }}</p>
+    </div>
+</div>    
+{% endblock %}

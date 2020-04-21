@@ -19,8 +19,17 @@ class Post(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default='draft')
 
+    class Meta:
+        ordering = ("-published",)
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("my_blog:post_detail", args=[self.pk, self.slug])
+
+    def was_published_recently(self):
+        return timezone.now() - datetime.timedelta(days=1) <= self.publish <= timezone.now()
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
